@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Selectors (Intermediate) Demo</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>CSS Selectors (Intermediate)</h1>
+    <p>Descendant vs child, pseudo-classes, pseudo-elements, and attribute selectors</p>
+  </header>
+
+  <!-- 1) Descendant vs Child selectors -->
+  <section class="panel" id="descendant-child">
+    <h2>1. Descendant vs Child selectors</h2>
+    <div class="family">
+      <div class="parent">
+        <p>I'm a direct child paragraph of .parent</p>
+        <div class="inner">
+          <p>I'm a nested child paragraph inside .inner</p>
+        </div>
+      </div>
+      <p>I'm a sibling paragraph, not inside .parent</p>
+    </div>
+    <ul class="legend">
+      <li><span class="chip chip-desc">.parent p</span> selects both direct and nested paragraphs</li>
+      <li><span class="chip chip-child">.parent &gt; p</span> selects only the direct child paragraph</li>
+    </ul>
+  </section>
+
+  <!-- 2) Pseudo-classes -->
+  <section class="panel" id="pseudo-classes">
+    <h2>2. Pseudo-classes (:hover, :first-child, :nth-child())</h2>
+    <nav class="menu">
+      <a class="menu-item" href="#home">Home</a>
+      <a class="menu-item" href="#services">Services</a>
+      <a class="menu-item" href="#blog">Blog</a>
+      <a class="menu-item" href="#contact">Contact</a>
+    </nav>
+
+    <ul class="striped-list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+      <li>Item 6</li>
+    </ul>
+  </section>
+
+  <!-- 3) Pseudo-elements -->
+  <section class="panel" id="pseudo-elements">
+    <h2>3. Pseudo-elements (::before, ::after)</h2>
+
+    <blockquote class="quote">
+      The only way to do great work is to love what you do.
+    </blockquote>
+
+    <div class="ribbon-card">
+      <h3>Ribbon Card</h3>
+      <p>Decorative ribbon created using ::before and ::after.</p>
+    </div>
+  </section>
+
+  <!-- 4) Attribute selectors -->
+  <section class="panel" id="attribute-selectors">
+    <h2>4. Attribute selectors (input[type="text"])</h2>
+    <form class="demo-form" action="#" method="get">
+      <div class="field">
+        <label>Text</label>
+        <input type="text" placeholder="Your name" />
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" placeholder="name@example.com" />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" />
+      </div>
+      <div class="field">
+        <label>Disabled (text)</label>
+        <input type="text" value="Can't edit" disabled />
+      </div>
+      <div class="actions">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <small>Selectors demo • Built for learning</small>
+  </footer>
+</body>
+</html>

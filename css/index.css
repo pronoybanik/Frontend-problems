@@ -1,0 +1,21 @@
+/* .title_text{
+    font-size: large;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 0em;
+} */
+
+.title_text {
+  font-size: clamp(1rem, 2vw + 0.5rem, 2rem); 
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 1.2em; 
+  margin: 0.5em 0;   
+}
+
+/* 
+
+# clamp() makes the font scale between a min and max size based on screen width.
+# line-height fixed to improve readability. 
+
+*/

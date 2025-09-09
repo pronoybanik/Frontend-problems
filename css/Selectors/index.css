@@ -1,0 +1,110 @@
+/* Base layout */
+:root{
+  --bg:#0f172a; /* slate-900 */
+  --panel:#111827; /* gray-900 */
+  --ink:#e5e7eb; /* gray-200 */
+  --muted:#9ca3af; /* gray-400 */
+  --brand:#60a5fa; /* blue-400 */
+  --accent:#f59e0b; /* amber-500 */
+  --ok:#22c55e; /* green-500 */
+  --danger:#ef4444; /* red-500 */
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background:linear-gradient(120deg, #0b1222 0%, #0d1324 60%, #121a33 100%);
+  color:var(--ink);
+}
+
+.site-header, .site-footer{
+  text-align:center;
+  padding:28px 16px;
+}
+.site-header h1{ margin:0 0 6px; font-weight:800; letter-spacing:.2px; }
+.site-header p{ margin:0; color:var(--muted); }
+
+.panel{
+  background:var(--panel);
+  margin:20px auto;
+  max-width:1100px;
+  padding:24px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.04);
+}
+.panel h2{ margin-top:0; }
+
+/* 1) Descendant vs Child selectors */
+.family{ display:grid; gap:12px; grid-template-columns: 1fr; }
+.parent{ border:2px dashed var(--brand); padding:12px; border-radius:10px; }
+.parent p{ background: rgba(96,165,250,.15); padding:8px 10px; border-radius:8px; }
+.parent > p{ outline:2px solid var(--brand); }
+.parent .inner{ border:2px dashed #7c3aed; padding:10px; border-radius:10px; }
+.parent .inner p{ background: rgba(124,58,237,.18); }
+.family > p{ color:var(--muted); font-style:italic; }
+
+.legend{ margin:12px 0 0; padding:0 0 0 18px; }
+.legend .chip{ display:inline-block; padding:2px 8px; border-radius:999px; background:#0b2552; color:#cfe3ff; margin-right:10px; border:1px solid #174089; }
+.chip-desc{ background:#0b2552; border-color:#174089; }
+.chip-child{ background:#3a0b4a; border-color:#6b1d84; color:#f5d9ff; }
+
+/* 2) Pseudo-classes */
+.menu{ display:flex; gap:12px; flex-wrap:wrap; }
+.menu-item{
+  text-decoration:none; color:var(--ink);
+  background:#0b2552; border:1px solid #174089;
+  padding:8px 14px; border-radius:10px;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.menu-item:first-child{ background:#062040; }
+.menu-item:nth-child(2n){ background:#102a54; }
+.menu-item:hover{ transform: translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.35); }
+.menu-item:active{ transform: translateY(0); filter:brightness(1.05); }
+
+.striped-list{ list-style:none; padding:0; margin:16px 0 0; border:1px solid #26324a; border-radius:10px; overflow:hidden; }
+.striped-list li{ padding:10px 12px; }
+.striped-list li:nth-child(odd){ background:rgba(96,165,250,.07); }
+.striped-list li:nth-child(even){ background:rgba(245,158,11,.08); }
+.striped-list li:first-child{ border-top:2px solid var(--brand); }
+.striped-list li:hover{ background:rgba(34,197,94,.15); }
+
+/* 3) Pseudo-elements */
+.quote{
+  position:relative; margin:16px 0; padding:18px 18px 18px 46px;
+  background: #0b1a36; border:1px solid #203056; border-radius:12px; font-style:italic;
+}
+.quote::before{ content:"\201C"; position:absolute; left:12px; top:-6px; font-size:48px; color:#29416f; line-height:1; }
+.quote::after{ content:"\201D"; position:absolute; right:12px; bottom:-22px; font-size:36px; color:#29416f; line-height:1; }
+
+.ribbon-card{ position:relative; background:#0f1f3c; border:1px solid #1d2b48; border-radius:12px; padding:18px 16px 18px 16px; overflow:hidden; }
+.ribbon-card::before{
+  content:""; position:absolute; top:12px; left:-32px; width:140px; height:28px; background:linear-gradient(90deg, #f59e0b, #ef4444);
+  transform: rotate(-12deg); box-shadow:0 3px 8px rgba(0,0,0,.35);
+}
+.ribbon-card::after{ content:"FEATURED"; position:absolute; top:14px; left:12px; font-size:12px; letter-spacing:2px; font-weight:800; color:#1b0d00; }
+
+/* 4) Attribute selectors */
+.demo-form{ display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top:8px; }
+.field{ display:flex; flex-direction:column; gap:6px; background:#0b1a36; padding:12px; border-radius:10px; border:1px solid #1f2a44; }
+.field label{ color:var(--muted); font-size:13px; }
+
+/* attribute equals */
+input[type="text"], input[type="email"], input[type="password"]{
+  background:#071225; color:var(--ink); border:1px solid #223153; border-radius:8px; padding:10px 12px; outline:none;
+}
+
+/* attribute presence and state */
+input[disabled]{ background:#0e1a30; color:#6b7280; cursor:not-allowed; border-style:dashed; }
+input[placeholder^="Your"]{ border-color:var(--ok); }
+input[placeholder$=".com"]{ border-color:var(--brand); }
+input[placeholder*="•"]{ border-color:var(--danger); }
+
+/* buttons */
+.actions{ grid-column:1 / -1; }
+button{ background:linear-gradient(180deg, #3b82f6, #2563eb); border:none; color:white; padding:10px 14px; border-radius:10px; cursor:pointer; box-shadow:0 6px 16px rgba(0,0,0,.35); }
+button:hover{ filter:brightness(1.05); }
+button:active{ transform: translateY(1px); }
+
+/* Small helper: code chips inside legend already styled above */

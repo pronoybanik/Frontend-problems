@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>CSS Positioning & Display Demo</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="title">Positioning & Display</h1>
+      
+      <!-- 1. Display Properties: inline, block, inline-block -->
+      <section class="demo-section">
+        <h2>1. Display Properties</h2>
+        
+        <h3>Inline Elements (display: inline)</h3>
+        <div class="example-box">
+          <span class="inline-demo">Inline 1</span>
+          <span class="inline-demo">Inline 2</span>
+          <span class="inline-demo">Inline 3</span>
+          <p class="note">Notice: Inline elements flow horizontally, width/height ignored</p>
+        </div>
+
+        <h3>Block Elements (display: block)</h3>
+        <div class="example-box">
+          <div class="block-demo">Block 1</div>
+          <div class="block-demo">Block 2</div>
+          <div class="block-demo">Block 3</div>
+          <p class="note">Notice: Block elements stack vertically, take full width</p>
+        </div>
+
+        <h3>Inline-Block Elements (display: inline-block)</h3>
+        <div class="example-box">
+          <div class="inline-block-demo">Inline-Block 1</div>
+          <div class="inline-block-demo">Inline-Block 2</div>
+          <div class="inline-block-demo">Inline-Block 3</div>
+          <p class="note">Notice: Flow horizontally but respect width/height</p>
+        </div>
+
+        <h3>Display None (display: none)</h3>
+        <div class="example-box">
+          <div class="visible-box">Visible Box</div>
+          <div class="hidden-box">This box is hidden (display: none)</div>
+          <div class="visible-box">Another Visible Box</div>
+          <p class="note">The middle box is completely removed from layout</p>
+        </div>
+      </section>
+
+      <!-- 2. Position Properties -->
+      <section class="demo-section">
+        <h2>2. Position Properties</h2>
+        
+        <h3>Static Position (default)</h3>
+        <div class="position-container">
+          <div class="static-box">Static Box 1</div>
+          <div class="static-box">Static Box 2</div>
+          <div class="static-box">Static Box 3</div>
+          <p class="note">Static: Normal document flow, top/left/right/bottom ignored</p>
+        </div>
+
+        <h3>Relative Position</h3>
+        <!--
+          Explanation: the "ghost" element shows the original spot in the layout.
+          The moved element uses "position: relative" and is offset visually but
+          the ghost remains where it was in the normal flow, so you can compare.
+        -->
+        <div class="position-container relative-demo">
+          <div class="relative-box">Normal Box</div>
+          <div class="relative-ghost">Original spot</div>
+          <div class="relative-box moved-relative">Moved Relative Box</div>
+          <div class="relative-box">Normal Box</div>
+          <p class="note">Relative: Offset from original position; space is still reserved (compare ghost vs moved box)</p>
+        </div>
+
+        <h3>Absolute Position</h3>
+        <div class="absolute-demo">
+          <div class="absolute-container">
+            <div class="absolute-box top-left">Top Left</div>
+            <div class="absolute-box top-right">Top Right</div>
+            <div class="absolute-box bottom-left">Bottom Left</div>
+            <div class="absolute-box bottom-right">Bottom Right</div>
+            <p class="note">Absolute: Positioned relative to the nearest positioned ancestor (this container)</p>
+          </div>
+
+          <!-- Demonstrate absolute positioning without a positioned ancestor -->
+          <div class="outside-note">
+            <p class="note">Below: this element is <strong>absolute</strong> but placed without a positioned ancestor — it uses the page (initial containing block).</p>
+            <div class="absolute-outside">Absolute (no ancestor)</div>
+          </div>
+        </div>
+
+        <h3>Fixed Position</h3>
+        <div class="fixed-demo-area">
+          <p>Scroll down to see the fixed element in action!</p>
+          <div class="content-spacer">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </div>
+        <div class="fixed-box">Fixed Box</div>
+
+        <h3>Sticky Position</h3>
+        <div class="sticky-container">
+          <div class="sticky-box">I'm Sticky! Scroll to see me stick</div>
+          <div class="content-spacer">
+            <p>More content here...</p>
+            <p>Keep scrolling...</p>
+            <p>The sticky element will stick when it reaches the top</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Z-Index Demo -->
+      <section class="demo-section">
+        <h2>3. Z-Index (Stacking Order)</h2>
+        <div class="z-index-container">
+          <div class="z-box z-box-1">Z-Index: 1</div>
+          <div class="z-box z-box-2">Z-Index: 2</div>
+          <div class="z-box z-box-3">Z-Index: 3</div>
+          <div class="z-box z-box-negative">Z-Index: -1</div>
+          <p class="note">Higher z-index values appear on top</p>
+        </div>
+      </section>
+
+      <!-- 4. Overflow Demo -->
+      <section class="demo-section">
+        <h2>4. Overflow Property</h2>
+        
+        <div class="overflow-examples">
+          <div class="overflow-demo">
+            <h4>Overflow: Visible (default)</h4>
+            <div class="overflow-box overflow-visible">
+              <div class="overflow-content">This content overflows the container and is visible outside the boundaries. You can see it extending beyond the box.</div>
+            </div>
+          </div>
+
+          <div class="overflow-demo">
+            <h4>Overflow: Hidden</h4>
+            <div class="overflow-box overflow-hidden">
+              <div class="overflow-content">This content overflows but is clipped and hidden. You cannot see the content that extends beyond the container boundaries.</div>
+            </div>
+          </div>
+
+          <div class="overflow-demo">
+            <h4>Overflow: Scroll</h4>
+            <div class="overflow-box overflow-scroll">
+              <div class="overflow-content">This content overflows but you can scroll to see it all. Scrollbars appear even if content fits. Try scrolling in this box!</div>
+            </div>
+          </div>
+
+          <div class="overflow-demo">
+            <h4>Overflow: Auto</h4>
+            <div class="overflow-box overflow-auto">
+              <div class="overflow-content">This content overflows and scrollbars appear automatically only when needed. This is the most commonly used overflow value.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

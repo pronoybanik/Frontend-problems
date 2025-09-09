@@ -1,0 +1,195 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 15px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Background Color */
+.bg-color {
+    background-color: #3498db;
+    color: white;
+    border: 3px solid #2980b9;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Background Image */
+.bg-image {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="%23ffffff" opacity="0.15"/><circle cx="50" cy="10" r="1" fill="%23ffffff" opacity="0.2"/><circle cx="10" cy="60" r="1.8" fill="%23ffffff" opacity="0.12"/><circle cx="90" cy="30" r="1.2" fill="%23ffffff" opacity="0.18"/></pattern></defs><rect width="100" height="100" fill="%2327ae60"/><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    background-size: 50px 50px;
+    background-repeat: repeat;
+    background-position: 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Linear Gradient */
+.bg-linear {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    background-size: 300% 300%;
+    animation: gradientShift 6s ease infinite;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Radial Gradient */
+.bg-radial {
+    background: radial-gradient(circle at center, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Box Shadow */
+.box-shadow {
+    background: white;
+    color: #333;
+    box-shadow: 
+        0 1px 3px rgba(0,0,0,0.12),
+        0 1px 2px rgba(0,0,0,0.24),
+        0 10px 20px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+    border: 1px solid #e0e0e0;
+}
+
+.box-shadow:hover {
+    box-shadow: 
+        0 14px 28px rgba(0,0,0,0.25),
+        0 10px 10px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* Text Shadow */
+.text-shadow {
+    background: #2c3e50;
+    color: white;
+}
+
+.shadow-text {
+    text-shadow: 
+        2px 2px 0px #34495e,
+        4px 4px 0px #5d6d7e,
+        6px 6px 10px rgba(0,0,0,0.5);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Complex Example */
+.complex {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 
+        0 8px 32px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.complex::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.fancy-btn {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.fancy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Pattern Background */
+.pattern-bg {
+    background: 
+        linear-gradient(45deg, #ff9a9e 25%, transparent 25%), 
+        linear-gradient(-45deg, #ff9a9e 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #fecfef 75%), 
+        linear-gradient(-45deg, transparent 75%, #fecfef 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    color: #333;
+    border-radius: 20px;
+}

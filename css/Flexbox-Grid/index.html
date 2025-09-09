@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexbox & Grid Demo</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <main>
+    <h1>Flexbox & Grid — Visual Demo</h1>
+
+    <!-- FLEXBOX SECTION -->
+    <!-- This section demonstrates main axis vs cross axis and common flex properties -->
+    <section class="panel" id="flexbox">
+      <h2>Flexbox</h2>
+
+      <!-- 1) Main vs Cross axis explanation (default flex-direction: row) -->
+      <div class="example">
+        <h3>Main axis vs Cross axis</h3>
+        <!-- flex container: main axis is horizontal (row), cross axis is vertical -->
+        <div class="flex-row container-demo">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+        <p class="caption">Default: main axis = row (left→right). Cross axis = column (top→bottom).</p>
+      </div>
+
+      <!-- 2) justify-content (align along main axis) and align-items (align along cross axis) -->
+      <div class="example">
+        <h3>justify-content & align-items</h3>
+        <div class="flex-demo">
+          <!-- Demonstrate different justify-content values -->
+          <div class="flex-row demo-row justify-start">
+            <span class="label">justify-content: flex-start</span>
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+          </div>
+
+          <div class="flex-row demo-row justify-center">
+            <span class="label">justify-content: center</span>
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+          </div>
+
+          <div class="flex-row demo-row justify-between">
+            <span class="label">justify-content: space-between</span>
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+          </div>
+
+          <!-- Demonstrate align-items on a taller container to see cross-axis alignment -->
+          <div class="flex-row demo-row tall align-start">
+            <span class="label">align-items: flex-start</span>
+            <div class="item tall-item">1</div>
+            <div class="item">2</div>
+            <div class="item tall-item">3</div>
+          </div>
+
+          <div class="flex-row demo-row tall align-center">
+            <span class="label">align-items: center</span>
+            <div class="item tall-item">1</div>
+            <div class="item">2</div>
+            <div class="item tall-item">3</div>
+          </div>
+
+          <div class="flex-row demo-row tall align-end">
+            <span class="label">align-items: flex-end</span>
+            <div class="item tall-item">1</div>
+            <div class="item">2</div>
+            <div class="item tall-item">3</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3) flex-wrap and wrapping -->
+      <div class="example">
+        <h3>flex-wrap</h3>
+        <p class="caption">When items can't fit on one line, flex-wrap controls whether they wrap.</p>
+        <div class="flex-row wrap-demo">
+          <!-- many items to force wrapping -->
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+        </div>
+      </div>
+
+      <!-- 4) flex-grow (how items grow to fill available space) -->
+      <div class="example">
+        <h3>flex-grow</h3>
+        <p class="caption">flex: 1 means the item grows to fill available space proportionally.</p>
+        <div class="flex-row grow-demo">
+          <div class="item">Fixed</div>
+          <div class="item grow">Grow 1</div>
+          <div class="item grow-2">Grow 2</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID SECTION -->
+    <!-- This section demonstrates grid tracks, gap, and named areas -->
+    <section class="panel" id="grid">
+      <h2>CSS Grid</h2>
+
+      <div class="example">
+        <h3>Grid tracks & gap</h3>
+        <p class="caption">grid-template-columns / rows define the track sizes; gap controls spacing.</p>
+        <div class="grid-basic">
+          <div class="g">1</div>
+          <div class="g">2</div>
+          <div class="g">3</div>
+          <div class="g">4</div>
+          <div class="g">5</div>
+          <div class="g">6</div>
+        </div>
+      </div>
+
+      <div class="example">
+        <h3>grid-area (named areas)</h3>
+        <p class="caption">Define named areas and place children by grid-area for semantic layouts.</p>
+        <div class="grid-areas">
+          <header class="area header">Header</header>
+          <aside class="area sidebar">Sidebar</aside>
+          <main class="area main">Main content</main>
+          <section class="area ads">Ads</section>
+          <footer class="area footer">Footer</footer>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="credits">Open <strong>Flexbox-Grid/index.html</strong> to view this demo.</footer>
+  </main>
+</body>
+</html>
