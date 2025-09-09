@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transitions & Animations Demo</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main>
+    <h1>Transitions & Animations</h1>
+
+    <!-- 1) Transitions: smooth changes on hover -->
+    <section class="panel">
+      <h2>Transitions (hover effects)</h2>
+      <!-- HTML comment: hover the items to see smooth transitions defined in CSS -->
+      <div class="row">
+        <button class="btn transition-btn">Hover me (background)</button>
+        <div class="box transition-box">Hover me (transform)</div>
+        <div class="shadow-card">Hover me (shadow + transform)</div>
+      </div>
+    </section>
+
+    <!-- 2) Transforms: scale, rotate, translate, skew (used with transitions too) -->
+    <section class="panel">
+      <h2>Transforms (scale, rotate, translate, skew)</h2>
+      <div class="row">
+        <div class="transform-demo scale">scale</div>
+        <div class="transform-demo rotate">rotate</div>
+        <div class="transform-demo translate">translate</div>
+        <div class="transform-demo skew">skew</div>
+      </div>
+      <p class="hint">Tip: combine transform + transition for smooth interactive effects.</p>
+    </section>
+
+    <!-- 3) Keyframes: repeating or one-shot animations -->
+    <section class="panel">
+      <h2>@keyframes Animations</h2>
+      <div class="row">
+        <div class="anim-spin">spin</div>
+        <div class="anim-pulse">pulse</div>
+        <div class="anim-bounce">bounce</div>
+        <div class="anim-color">color-change</div>
+      </div>
+      <p class="hint">These run automatically; use animation properties to control duration, timing, and iteration.</p>
+    </section>
+
+    <!-- 4) Combining transforms + keyframes -->
+    <section class="panel">
+      <h2>Combined: Keyframe + transform</h2>
+      <div class="row">
+        <div class="orbit">orbit</div>
+        <div class="combo-card">combo</div>
+      </div>
+      <p class="hint">Animations can change transform values across keyframes for rich motion.</p>
+    </section>
+
+    <footer class="credits">Open <strong>Transition-Animation/index.html</strong> in a browser to try it.</footer>
+  </main>
+</body>
+</html>

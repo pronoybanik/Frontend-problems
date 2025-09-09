@@ -1,0 +1,108 @@
+/* Transitions & Animations demo stylesheet
+   Comments explain what each rule demonstrates.
+*/
+
+:root{ --bg:#fbfbff; --panel:#ffffff; --accent:#06b6d4; --muted:#6b7280; }
+*{ box-sizing: border-box; }
+body{ margin:0; font-family:Segoe UI, Roboto, Arial, sans-serif; background:linear-gradient(180deg,#f0f9ff,#fbfbff); color:#0b1220; padding:24px; }
+main{ max-width:960px; margin:0 auto; }
+h1{ text-align:center; margin-bottom:18px; }
+.panel{ background:var(--panel); border:1px solid #e6eef6; border-radius:10px; padding:14px; margin-bottom:16px; }
+.row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.hint{ color:var(--muted); margin-top:8px; }
+
+/* -------------------------
+   1) Transitions (hover)
+   transition-property: which property will transition
+   transition-duration: how long the transition runs
+   transition-timing-function: easing
+   ------------------------- */
+.btn{
+  padding:10px 16px; border-radius:8px; border:2px solid var(--accent); background:transparent; color:var(--accent); cursor:pointer; font-weight:600;
+}
+.transition-btn{
+  /* Smooth background and color change on hover */
+  transition: background-color 240ms ease, color 240ms ease, transform 200ms ease;
+}
+.transition-btn:hover{
+  background-color:var(--accent); color:#fff; transform: translateY(-4px);
+}
+
+.transition-box{
+  width:120px; height:64px; border-radius:8px; background:linear-gradient(180deg,#fff,#f6fbff); display:flex; align-items:center; justify-content:center; border:1px solid #e2f0fb; cursor:pointer;
+  /* transition on transform and box-shadow for smooth hover */
+  transition: transform 220ms cubic-bezier(.22,.9,.31,1), box-shadow 220ms ease;
+}
+.transition-box:hover{ transform: scale(1.06) translateY(-6px); box-shadow:0 12px 28px rgba(6,182,212,0.12); }
+
+.shadow-card{ padding:12px 16px; border-radius:10px; background:#fff; border:1px solid #eef6f8; box-shadow:0 2px 6px rgba(2,6,23,0.06); transition: box-shadow 260ms ease, transform 260ms ease; cursor:pointer; }
+.shadow-card:hover{ transform: translateY(-8px); box-shadow:0 20px 48px rgba(2,6,23,0.12); }
+
+/* -------------------------
+   2) Transforms (scale, rotate, translate, skew)
+   transform applies multiple functions and is performant when animated
+   ------------------------- */
+.transform-demo{ width:100px; height:60px; background:linear-gradient(180deg,#fff6e6,#fff3e0); border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; border:1px solid #ffe9c9; cursor:pointer; transition: transform 240ms ease, box-shadow 240ms ease; }
+.transform-demo.scale:hover{ transform: scale(1.12); }
+.transform-demo.rotate:hover{ transform: rotate(12deg) scale(1.02); }
+.transform-demo.translate:hover{ transform: translateY(-10px) translateX(6px); }
+.transform-demo.skew:hover{ transform: skewX(-8deg) skewY(4deg); }
+
+/* -------------------------
+   3) Keyframes animations
+   animation-name, duration, timing-function, iteration-count, direction
+   ------------------------- */
+
+/* spin: infinite rotation */
+@keyframes spin {
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
+.anim-spin{ width:64px; height:64px; border-radius:8px; background:linear-gradient(180deg,#e0f2fe,#bae6fd); display:flex; align-items:center; justify-content:center; font-weight:700; animation: spin 2s linear infinite; }
+
+/* pulse: scale up and down */
+@keyframes pulse {
+  0%{ transform: scale(1); opacity:1; }
+  50%{ transform: scale(1.12); opacity:0.85; }
+  100%{ transform: scale(1); opacity:1; }
+}
+.anim-pulse{ width:80px; height:48px; background:linear-gradient(90deg,#d1fae5,#86efac); display:flex; align-items:center; justify-content:center; border-radius:8px; animation: pulse 1.6s ease-in-out infinite; }
+
+/* bounce: vertical movement using keyframes */
+@keyframes bounceY{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-18px); }
+}
+.anim-bounce{ width:72px; height:72px; background:linear-gradient(180deg,#fff1f2,#ffd6e0); border-radius:50%; display:flex; align-items:center; justify-content:center; animation: bounceY 1.2s cubic-bezier(.2,.8,.2,1) infinite; font-weight:700; }
+
+/* color-change: animate background-color across keyframes */
+@keyframes colorShift{
+  0%{ background: linear-gradient(90deg,#fde68a,#fca5a5); }
+  50%{ background: linear-gradient(90deg,#93c5fd,#a78bfa); }
+  100%{ background: linear-gradient(90deg,#d1fae5,#86efac); }
+}
+.anim-color{ width:110px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:8px; font-weight:700; animation: colorShift 4s ease-in-out infinite; }
+
+/* -------------------------
+   4) Combined: keyframes + transform
+   ------------------------- */
+@keyframes orbitAnim{
+  0%{ transform: rotate(0deg) translateX(0px) rotate(0deg); }
+  25%{ transform: rotate(30deg) translateX(12px) rotate(-30deg); }
+  50%{ transform: rotate(60deg) translateX(0px) rotate(-60deg); }
+  75%{ transform: rotate(120deg) translateX(-12px) rotate(-120deg); }
+  100%{ transform: rotate(360deg) translateX(0px) rotate(-360deg); }
+}
+.orbit{ width:64px; height:64px; border-radius:50%; background:linear-gradient(90deg,#e0f2fe,#bae6fd); display:flex; align-items:center; justify-content:center; animation: orbitAnim 3.6s linear infinite; }
+
+/* combo-card: tiny rotation + float using animation, with hover transition on top */
+@keyframes floatRot{
+  0%{ transform: translateY(0) rotate(0deg); }
+  50%{ transform: translateY(-8px) rotate(3deg); }
+  100%{ transform: translateY(0) rotate(0deg); }
+}
+.combo-card{ width:120px; height:72px; border-radius:10px; background:linear-gradient(90deg,#fff7ed,#fff3e0); display:flex; align-items:center; justify-content:center; animation: floatRot 3s ease-in-out infinite; transition: transform 240ms ease; cursor:pointer; }
+.combo-card:hover{ transform: translateY(-10px) scale(1.02); }
+
+/* small footer */
+.credits{ text-align:center; color:var(--muted); margin-top:12px; }
