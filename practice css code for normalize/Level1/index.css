@@ -1,0 +1,38 @@
+/* External file css */
+
+* {
+  color: black;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2 {
+  color: rgb(3, 37, 148);
+}
+
+#fatherName {
+  color: rgb(42, 165, 73);
+  font-weight: bold;
+}
+
+#motherName {
+  color: aqua;
+  font-weight: lighter;
+}
+
+#header {
+  text-align: center;
+}
+
+#describtion {
+  text-align: center;
+}
+ a{
+
+    text-decoration: none;
+ }
+
+ #fontSizePX{
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+ }

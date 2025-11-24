@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flex And Grid Resposive</title>
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+      /* Flex Part */
+      .container-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .container-1-1 {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+      }
+
+      .container-1-2 {
+        display: flex;
+        flex-basis: 100%;
+      }
+      .item {
+        flex-grow: 1;
+      }
+
+      @media (min-width: 768px) {
+        .container-1-1 {
+          flex-direction: row;
+          flex-wrap: wrap;
+          flex-basis: 60%;
+        }
+        .container-1-2 {
+          flex-basis: 40%;
+        }
+        .a {
+          flex-basis: 50%;
+        }
+        .b {
+          flex-basis: 50%;
+        }
+      }
+
+      /* Gird Part  */
+      .container {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas:
+            "a b d"
+            "c c d";
+        }
+        .a {
+          grid-area: a;
+        }
+        .b {
+          grid-area: b;
+        }
+        .c {
+          grid-area: c;
+        }
+        .d {
+          grid-area: d;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- First Part -->
+    <h1>First part</h1>
+    <div class="wrap">
+      <div class="container-one">
+        <div class="container-two">
+          <div class="itemA">A</div>
+          <div class="itemB">B</div>
+          <div class="itemD">D</div>
+        </div>
+        <div class="container-three">
+          <div class="itemC">C</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Part -->
+    <h1>second part</h1>
+    <div class="wrap">
+      <div class="container-flex">
+        <div class="container-1-1">
+          <div class="item a">A</div>
+          <div class="item b">B</div>
+          <div class="item d">D</div>
+        </div>
+        <div class="container-1-2">
+          <div class="item c">C</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Grid Part -->
+    <h1>Grid part</h1>
+    <div class="wrap">
+      <div class="container">
+        <div class="item a">A</div>
+        <div class="item b">B</div>
+        <div class="item c">C</div>
+        <div class="item d">D</div>
+      </div>
+    </div>
+  </body>
+</html>

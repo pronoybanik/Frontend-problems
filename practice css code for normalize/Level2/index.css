@@ -1,0 +1,22 @@
+#box {
+  height: 100px;
+  width: 100px;
+  background-color: green;
+  border: 2px solid ;
+  border-radius: 50%;
+}
+
+#text {
+    text-align: center;
+    color: white;
+}
+
+#box2 {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(0, 13, 128);
+  border: 2px solid ;
+  border-radius: 50%;
+  
+}
+

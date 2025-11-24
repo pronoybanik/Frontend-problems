@@ -1,0 +1,99 @@
+
+/* First Part */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: #f6f7fb;
+  color: #222;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.container-one {
+  display: flex;
+}
+.container-two {
+  display: flex;
+  width: 400px;
+  flex-wrap: wrap;
+}
+
+.itemA {
+  background-color: #000;
+  color: white;
+  width: 200px;
+  height: 400px;
+}
+.itemB {
+  background-color: #0f28b1;
+  color: white;
+  width: 200px;
+  height: 400px;
+}
+
+.itemD {
+  background-color: #cc0aac;
+  color: white;
+  width: 200px;
+  height: 400px;
+  flex-grow: 1;
+}
+
+.itemC {
+  background-color: #ad1414;
+  color: white;
+  width: 200px;
+  height: 100%;
+}
+
+/* second part */
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px;
+  height: calc(100vh - 20px);
+}
+
+.container-flex {
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  height: 100%;
+}
+
+.item {
+  color: #fff;
+  background-color: #cccccc;
+  padding: 20px;
+  font-family: "Montserrat";
+  font-size: calc(1vw + 1em);
+}
+
+.a {
+  background-color: violet;
+}
+
+.b {
+  background-color: yellowgreen;
+}
+
+.c {
+  background-color: royalblue;
+}
+
+.d {
+  background-color: rebeccapurple;
+}
