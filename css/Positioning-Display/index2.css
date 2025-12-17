@@ -1,0 +1,154 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+#chield {
+  background: #000;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px;
+}
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+#navIcon {
+  font-size: larger;
+  text-transform: uppercase;
+  z-index: 1000;
+}
+
+#alart {
+  position: relative;
+}
+
+#sideText {
+  background-color: antiquewhite;
+  color: chocolate;
+  font-size: larger;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  padding: 15px 20px;
+  border-radius: 5px 0 0 5px;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+}
+
+#navMenu {
+  gap: 20%;
+  display: flex;
+  align-items: center;
+}
+
+#navMenu li {
+  list-style: none;
+}
+
+#itemOne {
+  position: relative;
+  margin-top: 80px;
+  padding-bottom: 100px;
+}
+
+#paragraph {
+  text-align: center;
+  padding: 4px;
+}
+
+#icon {
+  border-color: #000;
+  background: #000;
+  display: inline-block;
+  color: aliceblue;
+  border-radius: 20px 20px;
+  padding: 20px;
+
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* part 2 */
+
+#box-container {
+  margin-top: 10px;
+  display: flex;
+  padding: 4px;
+  gap: 4px;
+}
+
+.box1 {
+  padding: 10px 20px;
+  background: #000;
+  color: aliceblue;
+}
+.box2 {
+  padding: 10px 20px;
+  background: #cc6666;
+  color: aliceblue;
+  display: none;
+}
+.box3 {
+  padding: 10px 20px;
+  background: #03797386;
+  color: aliceblue;
+}
+
+/* box 3 */
+
+#box-container2 {
+  margin-top: 10px;
+  padding: 20px;
+  position: relative;
+  height: 300px;
+}
+
+.box4 {
+  padding: 30px 40px;
+  background: #2563eb;
+  color: aliceblue;
+  border-radius: 10px;
+  width: 200px;
+  height: 120px;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  z-index: 1;
+}
+
+.box5 {
+  padding: 30px 40px;
+  background: #ea580c;
+  color: aliceblue;
+  border-radius: 10px;
+  width: 200px;
+  height: 120px;
+  position: absolute;
+  top: 60px;
+  left: 80px;
+  z-index: 2;
+}
+
+.box6 {
+  padding: 30px 40px;
+  background: #10b981;
+  color: aliceblue;
+  border-radius: 10px;
+  width: 200px;
+  height: 120px;
+  top: 100px;
+  left: 120px;
+  position: absolute;
+  z-index: 3;
+}
+
